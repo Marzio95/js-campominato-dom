@@ -22,7 +22,7 @@ function myGame() {
         console.log(arraySave)
         arrayBomb = [];
         console.log(arrayBomb);
-       
+
         // CICLO WHILE CHE CREA LE BOMBE
         while (arrayBomb.length < 16) {
             let bomb = Math.floor(Math.random() * 49) + 1;
@@ -30,7 +30,7 @@ function myGame() {
                 bomb = Math.floor(Math.random() * 49) + 1;
             }
             arrayBomb.push(bomb);
-        }     
+        }
 
         // CICLO FOR CHE CREA I BOX
         difficultInput.value = '';
@@ -40,23 +40,23 @@ function myGame() {
             box.innerHTML = i;
             containerGame.append(box);
             box.addEventListener('click', controllo);
-                        
+
             // FUNZIONE CONTROLLO TASTO BOMBA O NO
             function controllo() {
                 if (arrayBomb.includes(i)) {
-                    this.classList.add('colore_bad');  
+                    this.classList.add('colore_bad');
                     partita.innerHTML = 'Mi dispiace: HAI PERSO!';
-                    partita.style.display = 'block';  
+                    partita.style.display = 'block';
                 } else {
                     this.classList.add('colore_good');
-                    arraySave.push(this.innerHTML);  
+                    arraySave.push();
                     console.log(arraySave.push(this.innerHTML))
                 }
             }
         }
 
         // CONTROLLO FINALE SE LA PARTITA E' VINTA
-        if (arraySave.length == 34){
+        if (arraySave.length == 34) {
             partita.innerHTML = 'HAI VINTO!!!';
         } else {
 
@@ -86,7 +86,7 @@ function myGame() {
             containerGame.append(box);
             box.addEventListener('click', controllo);
 
-              // FUNZIONE CONTROLLO TASTO BOMBA O NO
+            // FUNZIONE CONTROLLO TASTO BOMBA O NO
             function controllo() {
                 if (arrayBomb.includes(i)) {
                     this.classList.add('colore_bad');
@@ -122,19 +122,19 @@ function myGame() {
             containerGame.append(box);
             box.addEventListener('click', controllo);
 
-              // FUNZIONE CONTROLLO TASTO BOMBA O NO
+            // FUNZIONE CONTROLLO TASTO BOMBA O NO
             function controllo() {
                 if (arrayBomb.includes(i)) {
                     this.classList.add('colore_bad');
                     partita.innerHTML = 'Mi dispiace: HAI PERSO!';
                     partita.style.visibility = 'visible';
-                    
-                    
+
+
                 } else {
                     this.classList.add('colore_good');
                 }
             }
-        } 
+        }
     } else {
 
     }
