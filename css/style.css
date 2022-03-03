@@ -78,7 +78,11 @@ html{
     margin-left: 4rem;
 }
 
-.colore_new{
+.colore_good{
     background-color: blueviolet;
     color: white;
+}
+
+.colore_bad{
+    background-color: red;
 }
