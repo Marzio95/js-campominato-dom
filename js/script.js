@@ -3,12 +3,13 @@ const containerGame = document.querySelector('.container_game');
 
 const btnPlay = document.getElementById('button_play');
 let difficultInput = document.getElementById('difficult');
+let partita = document.querySelector('.partita')
 
 btnPlay.addEventListener('click', myGame);
 let arrayBomb = [];
 
 function myGame() {
-
+    partita.innerHTML = '';
     containerGame.innerHTML = '';
 
 
@@ -33,7 +34,10 @@ function myGame() {
 
             function controllo() {
                 if (arrayBomb.includes(i)) {
-                    this.classList.add('colore_bad');
+                    this.classList.add('colore_bad');  
+                    partita.innerHTML = 'Mi dispiace: HAI PERSO!';
+                    partita.style.visibility = 'visible';
+
                 } else {
                     this.classList.add('colore_good');
                 }
@@ -62,6 +66,8 @@ function myGame() {
             function controllo() {
                 if (arrayBomb.includes(i)) {
                     this.classList.add('colore_bad');
+                    partita.innerHTML = 'Mi dispiace: HAI PERSO!';
+                    partita.style.visibility = 'visible';
                 } else {
                     this.classList.add('colore_good');
                 }
@@ -89,6 +95,8 @@ function myGame() {
             function controllo() {
                 if (arrayBomb.includes(i)) {
                     this.classList.add('colore_bad');
+                    partita.innerHTML = 'Mi dispiace: HAI PERSO!';
+                    partita.style.visibility = 'visible';
                 } else {
                     this.classList.add('colore_good');
                 }

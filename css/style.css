@@ -27,6 +27,7 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .container_game{
@@ -34,6 +35,7 @@ html{
     height: 500px;
     display: flex;
     flex-wrap: wrap;
+    margin: 2rem;
 }
 
 .quadrato{
@@ -86,3 +88,10 @@ html{
 .colore_bad{
     background-color: red;
 }
+
+.partita{
+    visibility: hidden;
+}
+
+
+
