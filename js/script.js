@@ -7,6 +7,7 @@ let partita = document.querySelector('.partita')
 
 btnPlay.addEventListener('click', myGame);
 let arrayBomb = [];
+let arraySave = [];
 
 function myGame() {
     partita.innerHTML = '';
@@ -14,7 +15,14 @@ function myGame() {
 
 
     if (difficultInput.value == 'Hard') {
+        arraySave = [];
+        console.log(arraySave)
         arrayBomb = [];
+        if (arrayBomb.length == 49 - 16){
+            partita.innerHTML = 'HAI VINTO!!!';
+        } else {
+
+        }
         console.log(arrayBomb);
         while (arrayBomb.length < 16) {
             let bomb = Math.floor(Math.random() * 49) + 1;
@@ -36,15 +44,22 @@ function myGame() {
                 if (arrayBomb.includes(i)) {
                     this.classList.add('colore_bad');  
                     partita.innerHTML = 'Mi dispiace: HAI PERSO!';
-                    partita.style.visibility = 'visible';
-
+                    partita.style.display = 'block';
+                    for (let i = 0; i <= arrayBomb.length; i++){
+                        arrayBomb[i].classList.add('colore_bad');
+                    }
+                        
+                    
+                    
                 } else {
                     this.classList.add('colore_good');
+                    arraySave.push(this);                    
                 }
             }
         }
 
     } else if (difficultInput.value == 'Medium') {
+        arraySave = [];
         arrayBomb = [];
         console.log(arrayBomb);
         while (arrayBomb.length < 16) {
@@ -74,6 +89,7 @@ function myGame() {
             }
         }
     } else if (difficultInput.value == 'Easy') {
+        arraySave = [];
         arrayBomb = [];
         console.log(arrayBomb);
         while (arrayBomb.length < 16) {
@@ -97,11 +113,13 @@ function myGame() {
                     this.classList.add('colore_bad');
                     partita.innerHTML = 'Mi dispiace: HAI PERSO!';
                     partita.style.visibility = 'visible';
+                    
+                    
                 } else {
                     this.classList.add('colore_good');
                 }
             }
-        }
+        } 
     } else {
 
     }
