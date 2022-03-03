@@ -3,13 +3,25 @@ const containerGame = document.querySelector('.container_game');
 
 const btnPlay = document.getElementById('button_play');
 let difficultInput = document.getElementById('difficult');
+let arrayBomb = [];
+console.log(arrayBomb);
 
 btnPlay.addEventListener('click', myGame);
 
 function myGame() {
-
+    
     containerGame.innerHTML = '';
+    
     if (difficultInput.value == 'Hard') {
+        for (let index = 1; index <= 16; index++) {
+            let bomb = Math.floor(Math.random() * 49) + 1;
+            console.log(bomb)
+            if (arrayBomb.includes(bomb)){
+                !arrayBomb.push(bomb)
+            } else {
+                arrayBomb.push(bomb)
+            }
+        }
         difficultInput.value = '';
         for (let i = 1; i <= 49; i++) {
             let box = document.createElement('div');
