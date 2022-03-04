@@ -45,14 +45,22 @@ function myGame() {
             function controllo() {
                 if (arrayBomb.includes(i)) {
                     this.classList.add('colore_bad');
-                    partita.innerHTML = 'Mi dispiace: HAI PERSO!';
+                    partita.innerHTML = 'Mi dispiace: HAI PERSO! Il tuo punteggio è: ' + arraySave.length;
                     partita.style.display = 'block';
+                    const boxes = document.querySelectorAll('.quadrato');
+                    for (let index = 0; index < boxes.length; index++) {
+                        boxes[index].removeEventListener('click', controllo);
+                    }
+
                 } else {
                     this.classList.add('colore_good');
-                    arraySave.push();
-                    console.log(arraySave.push(this.innerHTML))
+                    arraySave.push(this);
+                    console.log(arraySave)
                 }
+
+                this.removeEventListener('click', controllo);
             }
+        
         }
 
         // CONTROLLO FINALE SE LA PARTITA E' VINTA
