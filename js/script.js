@@ -47,9 +47,15 @@ function myGame() {
                     this.classList.add('colore_bad');
                     partita.innerHTML = 'Mi dispiace: HAI PERSO! Il tuo punteggio è: ' + arraySave.length;
                     partita.style.display = 'block';
-                    const boxes = document.querySelectorAll('.quadrato');
-                    for (let index = 0; index < boxes.length; index++) {
-                        boxes[index].removeEventListener('click', controllo);
+                    
+                    let boxes = document.querySelectorAll('.quadrato');
+                    console.log(boxes);
+                    for (let i = 0; i < boxes.length; i++) {
+                        boxes[i].removeEventListener('click', controllo);
+                        console.log(boxes[i]);
+                        if (arrayBomb.includes(parseInt(boxes[i].innerHTML))){
+                            boxes[i].classList.add('colore_bad')
+                        }
                     }
 
                 } else {
