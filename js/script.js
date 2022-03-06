@@ -47,13 +47,13 @@ function myGame() {
                     this.classList.add('colore_bad');
                     partita.innerHTML = 'Mi dispiace: HAI PERSO! Il tuo punteggio è: ' + arraySave.length;
                     partita.style.display = 'block';
-                    
+
                     let boxes = document.querySelectorAll('.quadrato');
                     console.log(boxes);
                     for (let i = 0; i < boxes.length; i++) {
                         boxes[i].removeEventListener('click', controllo);
                         console.log(boxes[i]);
-                        if (arrayBomb.includes(parseInt(boxes[i].innerHTML))){
+                        if (arrayBomb.includes(parseInt(boxes[i].innerHTML))) {
                             boxes[i].classList.add('colore_bad')
                         }
                     }
@@ -65,8 +65,9 @@ function myGame() {
                 }
 
                 this.removeEventListener('click', controllo);
+
             }
-        
+
         }
 
         // CONTROLLO FINALE SE LA PARTITA E' VINTA
@@ -79,6 +80,7 @@ function myGame() {
         // DIFFICOLTA' MEDIUM
     } else if (difficultInput.value == 'Medium') {
         arraySave = [];
+        console.log(arraySave)
         arrayBomb = [];
         console.log(arrayBomb);
 
@@ -104,17 +106,38 @@ function myGame() {
             function controllo() {
                 if (arrayBomb.includes(i)) {
                     this.classList.add('colore_bad');
-                    partita.innerHTML = 'Mi dispiace: HAI PERSO!';
-                    partita.style.visibility = 'visible';
+                    partita.innerHTML = 'Mi dispiace: HAI PERSO! Il tuo punteggio è: ' + arraySave.length;
+                    partita.style.display = 'block';
+
+                    let boxes = document.querySelectorAll('.quadrato2');
+                    console.log(boxes);
+                    for (let i = 0; i < boxes.length; i++) {
+                        boxes[i].removeEventListener('click', controllo);
+                        console.log(boxes[i]);
+                        if (arrayBomb.includes(parseInt(boxes[i].innerHTML))) {
+                            boxes[i].classList.add('colore_bad')
+                        }
+                    }
+
                 } else {
                     this.classList.add('colore_good');
+                    arraySave.push(this);
                 }
             }
         }
+              // CONTROLLO FINALE SE LA PARTITA E' VINTA
+              if (arraySave.length == 65) {
+                partita.innerHTML = 'HAI VINTO!!!';
+            } else {
+    
+            }
+
+        
 
         // DIFFICOLTA' EASY
     } else if (difficultInput.value == 'Easy') {
         arraySave = [];
+        console.log(arraySave)
         arrayBomb = [];
         console.log(arrayBomb);
 
@@ -140,16 +163,35 @@ function myGame() {
             function controllo() {
                 if (arrayBomb.includes(i)) {
                     this.classList.add('colore_bad');
-                    partita.innerHTML = 'Mi dispiace: HAI PERSO!';
-                    partita.style.visibility = 'visible';
+                    partita.innerHTML = 'Mi dispiace: HAI PERSO! Il tuo punteggio è: ' + arraySave.length;
+                    partita.style.display = 'block';
+
+                    let boxes = document.querySelectorAll('.quadrato3');
+                    console.log(boxes);
+                    for (let i = 0; i < boxes.length; i++) {
+                        boxes[i].removeEventListener('click', controllo);
+                        console.log(boxes[i]);
+                        if (arrayBomb.includes(parseInt(boxes[i].innerHTML))) {
+                            boxes[i].classList.add('colore_bad')
+                        }
+                    }
 
 
                 } else {
                     this.classList.add('colore_good');
+                    arraySave.push(this);
                 }
             }
         }
-    } else {
+             // CONTROLLO FINALE SE LA PARTITA E' VINTA
+        if (arraySave.length == 84) {
+            partita.innerHTML = 'HAI VINTO!!!';
+        } else {
+
+        }
+    } 
+    
+    else {
 
     }
 

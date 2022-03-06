@@ -96,5 +96,58 @@ html{
     bottom: 1.7rem;
 }
 
+@media screen and (max-width: 413px) {
+    
+.container_game{
+    width: 380px;
+    height: 380px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+.container{
+    width: 412px;
+}
+
+.header{
+    display: inline-block;
+}
+
+
+
+.quadrato{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.quadrato2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.quadrato3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+
+  }
+
 
 
